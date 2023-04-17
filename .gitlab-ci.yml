@@ -6,6 +6,7 @@ build-job:
 test-job1:
   stage: test
   script:
+    - pip install pytest
     - pytest median_polish/test
 
 test-job2:
