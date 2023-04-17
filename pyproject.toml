@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "median-polish"
+dynamic = ["version"]
+description = "perform median polish on data"
+readme = "README.md"
+license = ""
+authors = [
+    { name = "Keji Li", email = "mail@keji.li" },
+]
+dependencies = [
+    "numpy",
+]
+
+[tool.hatch.version]
+path = "median_polish/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/median_polish",
+]
+
+[tool.hatch.publish.index]
+disable = false
