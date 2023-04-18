@@ -12,7 +12,13 @@ authors = [
     { name = "Keji Li", email = "mail@keji.li" },
 ]
 dependencies = [
-    "numpy",
+    "numpy >= 1.22",
+]
+
+[project.optional-dependencies]
+dev = [
+    'pytest',
+    'pytest-cov'
 ]
 
 [tool.hatch.version]
