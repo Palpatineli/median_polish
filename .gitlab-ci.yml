@@ -15,4 +15,3 @@ test-job1:
         coverage_format: cobertura
         path: coverage.xml
       junit: junit.xml
-  allow_failure: true
