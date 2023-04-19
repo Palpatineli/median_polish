@@ -35,6 +35,6 @@ def test_simple(simple_table):
     assert(np.allclose(result_2['r'], correct_2))
     assert(np.allclose(median_polish(simple_table, 3)['ave'], 20.6))
 
-def test_fail(simple_table):
+def test_median_absolute_deviation(simple_table):
     result = med_abs_dev(simple_table)
-    assert isinstance(result, np.ndarray)
+    assert result == 3.75
