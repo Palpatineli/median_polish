@@ -4,7 +4,7 @@ test-job1:
   before_script:
     - pip3 install -e .[dev]
   script:
-    - coverage run -m pytest
+    - coverage run -m pytest --junitxml=junit.xml
   after_script:
     - coverage report
     - coverage xml
@@ -13,5 +13,6 @@ test-job1:
     reports:
       coverage_report:
         coverage_format: cobertura
-        path: coverage.xml
+        path: cobertura-coverage.xml
+      junit: junit.xml
   allow_failure: true
