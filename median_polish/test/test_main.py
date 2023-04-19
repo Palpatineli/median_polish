@@ -1,6 +1,7 @@
 from pytest import fixture
 import numpy as np
 from median_polish import median_polish
+from median_polish.main import med_abs_dev
 
 TEST_DATA_FOLDER = "median_polish/test/data.npz"
 
@@ -33,3 +34,7 @@ def test_simple(simple_table):
     assert(np.allclose(result_2['row'], effects_2[0]))
     assert(np.allclose(result_2['r'], correct_2))
     assert(np.allclose(median_polish(simple_table, 3)['ave'], 20.6))
+
+def test_fail(simple_table):
+    result = med_abs_dev(simple_table)
+    assert isinstance(result, np.ndarray)

@@ -13,6 +13,6 @@ test-job1:
     reports:
       coverage_report:
         coverage_format: cobertura
-        path: cobertura-coverage.xml
+        path: coverage.xml
       junit: junit.xml
   allow_failure: true
