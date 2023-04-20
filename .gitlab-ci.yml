@@ -4,11 +4,11 @@ test-job1:
   before_script:
     - pip3 install -e .[dev]
   script:
-    - coverage run -m pytest --junitxml=junit.xml
+    - python3 -m coverage run -m pytest --junitxml=junit.xml
   after_script:
-    - coverage report
-    - coverage xml
-  coverage: '/(?i)total.*? (100(?:\.0+)?\%|[1-9]?\d(?:\.\d+)?\%)$/'
+    - echo TOTAL_COVERAGE=`python3 -m coverage report --format total --precision 2`
+    - python3 -m coverage xml -o coverage.xml
+  coverage: '/TOTAL_COVERAGE.*? (100(?:\.0+)?\%|[1-9]?\d(?:\.\d+)?\%)$/'
   artifacts:
     reports:
       coverage_report:

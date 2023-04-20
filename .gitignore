@@ -1,2 +1,6 @@
 dist
 *.egg-info
+
+coverage.xml
+junit.xml
+.coverage
