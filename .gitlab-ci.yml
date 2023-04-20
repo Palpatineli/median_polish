@@ -6,9 +6,9 @@ test-job1:
   script:
     - python3 -m coverage run -m pytest --junitxml=junit.xml
   after_script:
-    - echo TOTAL_COVERAGE=`python3 -m coverage report --format total --precision 2`
+    - echo TOTAL_COVERAGE=`python3 -m coverage report --format total --precision 2`%
     - python3 -m coverage xml -o coverage.xml
-  coverage: '/TOTAL_COVERAGE.*? (100(?:\.0+)?\%|[1-9]?\d(?:\.\d+)?\%)$/'
+  coverage: '/TOTAL_COVERAGE\s*=\s*(100(?:\.0+)?\%|[1-9]?\d(?:\.\d+)?\%)$/'
   artifacts:
     reports:
       coverage_report:
