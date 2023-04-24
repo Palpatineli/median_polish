@@ -31,3 +31,10 @@ include = [
 
 [tool.hatch.publish.index]
 disable = false
+
+[tool.coverage.run]
+branch = true
+omit = [
+    "*/playground/*",
+    "_version.py"
+]
